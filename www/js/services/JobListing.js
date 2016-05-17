@@ -3,13 +3,13 @@
  * User: Aman
  * Date: 2/9/16
  */
-
-app.factory('JobListing', ['$http', function ($http) {
+angular.module('services', [])
+.factory('JobListing', ['$http', function ($http) {
   return {
     fetchJobs: function (pageNumber,pageSize) {
       var options = {
         method: 'GET',
-        url: '/jobs',
+        url: 'http://myrefers.com/myrefers-api/jobs',
         params: {
           pageNumber:pageNumber,
           pageSize:pageSize

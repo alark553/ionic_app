@@ -1,11 +1,14 @@
 angular.module('controllers', [])
 
-.controller('JobCtrl', function($scope,$http){
+.controller('JobCtrl', function($scope,$http,JobListing){
 
-  $scope.mydata = [];
-  $http.get('json/company_jobs.json').then(function(response){
+  var self = this;
+  self.mydata = [];
+  self.pageNumber = 0;
+  self.pageSize = 5;
+  JobListing.fetchJobs(self.pageNumber,self.pageSize).then(function(response){
 
-    $scope.mydata = response.data.jobViews;
+    self.mydata = response.data.result.jobDetails;
 
   });
 

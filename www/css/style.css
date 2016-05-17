@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.noWhiteSpace {
+  white-space: normal!important;
+}
+
+.border {
+  border:1px solid black;
+}

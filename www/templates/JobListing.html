@@ -1,1 +1,28 @@
+<ion-view title="Jobs">
+  <ion-content>
+    <ul class="list">
+      <li class="item">
+        <button ng-click="JobCtrl.next()">Next</button>
+        <button ng-click="JobCtrl.previous()">Previous</button>
+      </li>
+      <!--<li>-->
+      <!--<button ng-repeat="x in JobCtrl.mydata">{{x}}</button>-->
+      <!--</li>-->
+      <li class="item noWhiteSpace">
+        Current Page Number: <strong>{{ JobCtrl.pageNumber + 1 }}</strong>
+        Total Number of Pages: <strong>{{ JobCtrl.totalPages }}</strong>
+      </li>
+    </ul>
 
+    <ul class="list">
+      <li class="item" ng-repeat="x in JobCtrl.mydata">
+        <p ng-click="onIndividual()">{{x.title}}</p>
+        <!--<ion-nav-view></ion-nav-view>-->
+      </li>
+    </ul>
+
+    <!--<ul class="list">
+      <button class="item" ng-repeat="x in JobCtrl.num">{{x}}</button>
+    </ul>-->
+  </ion-content>
+</ion-view>

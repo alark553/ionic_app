@@ -1,6 +1,6 @@
 angular.module('controllers', [])
 
-  .controller('JobCtrl', function ($scope, $http, JobListing, GetRange) {
+  .controller('JobCtrl', function ($scope, $http, JobListing) {
 
     var self = this;
     self.num = [];
@@ -33,8 +33,8 @@ angular.module('controllers', [])
       }
     };
 
-
-        self.num = GetRange.range(self.totalPages);
-
-
+    // self.num = GetRange.range(self.totalPages);
+    self.individual = function () {
+      
+    };
   });

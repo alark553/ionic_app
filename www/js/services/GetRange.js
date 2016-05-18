@@ -1,18 +1,16 @@
-angular.module('services', [])
-  .factory('GetRange', ['$http','$scope', function ($http, $scope) {
 
-    var self = this;
-    self.num = [];
-
+//angular.module('service', [])
+ionicApp.factory('GetRange', ['$http', function ($http) {
     return {
-
       range: function (size) {
+        var num = [];
         for (i = 1; i < size; i++) {
-          self.num.push(i);
+          num.push(i);
         }
-        return self.num;
+        return num;
       }
-
     }
-
   }]);
+
+
+

@@ -1,6 +1,6 @@
-angular.module('controllers', [])
+//angular.module('controllers', [])
 
-  .controller('JobCtrl', function ($scope, $http, JobListing, GetRange) {
+ionicApp.controller('JobCtrl', function ($scope, $http,JobListing,GetRange) {
 
     var self = this;
     self.num = [];
@@ -34,7 +34,7 @@ angular.module('controllers', [])
     };
 
 
-        self.num = GetRange.range(self.totalPages);
-
+       self.num = GetRange.range(self.totalPages);
+        console.log(self.num);
 
   });

@@ -3,8 +3,8 @@
  * User: Aman
  * Date: 2/9/16
  */
-angular.module('services', [])
-.factory('JobListing', ['$http', function ($http) {
+//angular.module('services', [])
+ionicApp.factory('JobListing', ['$http', function ($http) {
   return {
     fetchJobs: function (pageNumber,pageSize) {
       var options = {

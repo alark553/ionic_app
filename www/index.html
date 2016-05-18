@@ -79,9 +79,9 @@
             <p><strong>Experience</strong>: {{x.minExp}} - {{x.maxExp}} years</p>
           </li>
         </ul>-->
-        <ul class="list">
+        <!--<ul class="list">
           <li class="item">{{JobCtrl.mydata}}</li>
-        </ul>
+        </ul>-->
 <!--
         <ul class="list">
           <a class="item item-avatar-left" ng-repeat="x in mydata" href="#">
@@ -134,6 +134,34 @@
           </a>&ndash;&gt;
 
         </ul>-->
+
+        <!--<ul ng-controller="numCtrl as numCtrl" class="list">
+          <li ng-repeat="x in numCtrl.num" class="item">
+            <a href="#" ng-click="">{{ x }}</a>
+          </li>
+        </ul>-->
+
+        <ul class="list">
+          <li class="item">
+            <button ng-click="JobCtrl.next()">Next</button>
+            <button ng-click="JobCtrl.previous()">Previous</button>
+          </li>
+          <!--<li>-->
+            <!--<button ng-repeat="x in JobCtrl.mydata">{{x}}</button>-->
+          <!--</li>-->
+          <li class="item noWhiteSpace">
+            Current Page Number: <strong>{{ JobCtrl.pageNumber + 1 }}</strong>
+            Total Number of Pages: <strong>{{ JobCtrl.totalPages }}</strong>
+          </li>
+        </ul>
+
+        <ul class="list">
+          <li class="item" ng-repeat="x in JobCtrl.mydata">{{x.title}}</li>
+        </ul>
+
+        <!--<ul class="list">-->
+          <!--<button class="item" ng-repeat="x in JobCtrl.num">{{x}}</button>-->
+        <!--</ul>-->
       </ion-content>
 
 
@@ -147,6 +175,9 @@
 
 </ion-pane>
 </body>
-<script src="js/controllers/JobCtrl.js"></script>
+<!--<script src="js/controllers/numbers.js"></script>-->
 <script src="js/services/JobListing.js"></script>
+<script src="js/controllers/JobCtrl.js"></script>
+
+<script src="js/services/GetRange.js"></script>
 </html>

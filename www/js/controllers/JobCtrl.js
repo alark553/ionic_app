@@ -8,34 +8,33 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, JobListing
   self.pageNumber = 0;
   self.pageSize = 10;
 
-  JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
+  self.jobFunction = function () {
+    JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
 
-    self.mydata = response.data.result.jobDetails;
-    self.totalCount = response.data.totalRecordCount;
-    self.totalPages = Math.ceil(self.totalCount / self.pageSize);
+      self.mydata = response.data.result.jobDetails;
+      self.totalCount = response.data.totalRecordCount;
+      self.totalPages = Math.ceil(self.totalCount / self.pageSize);
 
-  });
+    });
+  };
 
+  self.jobFunction();
   self.next = function () {
     if (self.pageNumber < self.totalPages - 1) {
       self.pageNumber++;
-      JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
-        self.mydata = response.data.result.jobDetails;
-      });
+      self.jobFunction();
     }
   };
 
   self.previous = function () {
     if (self.pageNumber > 0) {
       self.pageNumber--;
-      JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
-        self.mydata = response.data.result.jobDetails;
-      });
+      self.jobFunction();
     }
   };
 
   self.num = GetRange.range(self.totalPages);
-  console.log(self.num);
-
+  // console.log(self.num);
+  
 
 });

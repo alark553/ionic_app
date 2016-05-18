@@ -25,147 +25,154 @@
 
 <ion-pane>
 
-  <ion-header-bar class="bar-assertive">
-    <h1 class="title">MyRefers</h1>
-  </ion-header-bar>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
 
 
-  <ion-tabs class="tabs-assertive tabs-icon-top">
-    <ion-tab title="Applicants" icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
-      <ion-header-bar class="bar-positive"></ion-header-bar>
-      <ion-content>
-        <p>Hello</p>
-      </ion-content>
-    </ion-tab>
+  <!-- <ion-tabs class="tabs-assertive tabs-icon-top">
+     <ion-tab title="Applicants" icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+       <ion-header-bar class="bar-positive"></ion-header-bar>
+       <ion-content>
+         <p>Hello</p>
+       </ion-content>
+     </ion-tab>
 
-    <ion-tab title="Engage" icon-on="C:\Users\Shubham\ionic\ATS_Application\www\img\engage.png"
-             icon-off="ion-ios-clock-outline">
-    </ion-tab>
+     <ion-tab title="Engage" icon-on="C:\Users\Shubham\ionic\ATS_Application\www\img\engage.png"
+              icon-off="ion-ios-clock-outline">
+     </ion-tab>
 
-    <ion-tab title="Jobs" icon-on="ion-ios-briefcase" icon-off="ion-ios-briefcase-outline">
-      <ion-header-bar></ion-header-bar>
-
-
-      <!--<ul class="row" class="tab_custom">
-        <li class="col current" data-tab="tab-1">Tab 1</li>
-        <li class="col" data-tab="tab-2">Tab 2</li>
-        <li class="col" data-tab="tab-3">Tab 3</li>
-      </ul>
-
-      <div id="tab-1" class="tab-content current">
-        <h2>Tab One</h2>
-      </div>
-      <div id="tab-2" class="tab-content">
-        <h2>Tab Two</h2>
-      </div>
-      <div id="tab-3" class="tab-content">
-        <h2>Tab Three</h2>
-      </div>-->
+     <ion-tab title="Jobs" icon-on="ion-ios-briefcase" icon-off="ion-ios-briefcase-outline">
+       <ion-header-bar></ion-header-bar>
 
 
-      <!--ul>
-        <li class="item item-avatar-left noWhiteSpace card" ng-repeat="x in mydata">
-          <img ng-src="{{x.companyLogo}}">
-          <p class="noWhiteSpace">{{ x.title }} at <strong>{{ x.companyName }}</strong></p>
-          &lt;!&ndash;<p> <strong>{{ x.location }}</strong></p><p class="pull-right">{{ x.industry }}</p>&ndash;&gt;
-          <div class="row">
-            <div class="col noWhiteSpace"><p>{{x.location}}</p></div>
-            <div class="col noWhiteSpace"><p>{{x.industry}}</p><p>{{x.functionalArea}}</p></div>
-          </div>
-          <strong>Skills: </strong><p class="noWhiteSpace" ng-repeat="skill in x.skills ">{{skill}},</p>
-          <p><strong>Salary</strong>: {{x.salary}}</p>
-          <p><strong>Experience</strong>: {{x.minExp}} - {{x.maxExp}} years</p>
-        </li>
-      </ul>-->
-      <!--<ul class="list">
-        <li class="item">{{JobCtrl.mydata}}</li>
-      </ul>-->
-      <!--
-              <ul class="list">
-                <a class="item item-avatar-left" ng-repeat="x in mydata" href="#">
-                  <img ng-src="{{ x.companyLogo}}">
-                  <h2 class="noWhiteSpace">{{ x.title }} at <strong><i>{{x.companyName}}</i></strong></h2>
-                </a>
-                <a class="row item " ng-repeat="x in mydata" href="#">
-                  <div class="row ">
-                    <div class="col-20 item item-avatar col-center">
-                      <img ng-src="{{ x.companyLogo}}">
-                    </div>
-                    <div class="col ">
-                      <div class="row ">
-                        &lt;!&ndash;<div class="col-66">{{ x.title }}</div>
-                        <div class="col-34"><strong>at {{ x.companyName }}</strong></div>&ndash;&gt;
-                        <p>{{x.title}} at <strong>{{x.companyName}}</strong></p>
-                      </div>
-                      <div class="row ">
-                        <div class="col-33 "><p>{{x.location}}</p></div>
-                        <div class="col ">
-                          <div class="row noWhiteSpace"><p><strong>Industry: </strong>{{x.industry}}</p></div>
-                          <div class="row noWhiteSpace"><p><strong>Functional Area: </strong>{{x.functionalArea}}</p></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                &lt;!&ndash;<a class="row item " ng-repeat="x in mydata" href="#">
-                  <div class="row ">
-                    <div class="col-20 item item-avatar col-center">
-                      <img ng-src="{{ x.companyLogo}}">
-                    </div>
-                    <div class="col ">
-                      <div class="row ">
-                        &lt;!&ndash;<div class="col-66">{{ x.title }}</div>
-                        <div class="col-34"><strong>at {{ x.companyName }}</strong></div>&ndash;&gt;
-                        <p>{{x.title}} at <strong>{{x.companyName}}</strong></p>
-                        <div><p>{{x.location}}</p></div>
-                      </div>
-                      &lt;!&ndash; <div class="row ">
+       &lt;!&ndash;<ul class="row" class="tab_custom">
+         <li class="col current" data-tab="tab-1">Tab 1</li>
+         <li class="col" data-tab="tab-2">Tab 2</li>
+         <li class="col" data-tab="tab-3">Tab 3</li>
+       </ul>
+
+       <div id="tab-1" class="tab-content current">
+         <h2>Tab One</h2>
+       </div>
+       <div id="tab-2" class="tab-content">
+         <h2>Tab Two</h2>
+       </div>
+       <div id="tab-3" class="tab-content">
+         <h2>Tab Three</h2>
+       </div>&ndash;&gt;
+
+
+       &lt;!&ndash;ul>
+         <li class="item item-avatar-left noWhiteSpace card" ng-repeat="x in mydata">
+           <img ng-src="{{x.companyLogo}}">
+           <p class="noWhiteSpace">{{ x.title }} at <strong>{{ x.companyName }}</strong></p>
+           &lt;!&ndash;<p> <strong>{{ x.location }}</strong></p><p class="pull-right">{{ x.industry }}</p>&ndash;&gt;
+           <div class="row">
+             <div class="col noWhiteSpace"><p>{{x.location}}</p></div>
+             <div class="col noWhiteSpace"><p>{{x.industry}}</p><p>{{x.functionalArea}}</p></div>
+           </div>
+           <strong>Skills: </strong><p class="noWhiteSpace" ng-repeat="skill in x.skills ">{{skill}},</p>
+           <p><strong>Salary</strong>: {{x.salary}}</p>
+           <p><strong>Experience</strong>: {{x.minExp}} - {{x.maxExp}} years</p>
+         </li>
+       </ul>&ndash;&gt;
+       &lt;!&ndash;<ul class="list">
+         <li class="item">{{JobCtrl.mydata}}</li>
+       </ul>&ndash;&gt;
+       &lt;!&ndash;
+               <ul class="list">
+                 <a class="item item-avatar-left" ng-repeat="x in mydata" href="#">
+                   <img ng-src="{{ x.companyLogo}}">
+                   <h2 class="noWhiteSpace">{{ x.title }} at <strong><i>{{x.companyName}}</i></strong></h2>
+                 </a>
+                 <a class="row item " ng-repeat="x in mydata" href="#">
+                   <div class="row ">
+                     <div class="col-20 item item-avatar col-center">
+                       <img ng-src="{{ x.companyLogo}}">
+                     </div>
+                     <div class="col ">
+                       <div class="row ">
+                         &lt;!&ndash;<div class="col-66">{{ x.title }}</div>
+                         <div class="col-34"><strong>at {{ x.companyName }}</strong></div>&ndash;&gt;
+                         <p>{{x.title}} at <strong>{{x.companyName}}</strong></p>
+                       </div>
+                       <div class="row ">
                          <div class="col-33 "><p>{{x.location}}</p></div>
                          <div class="col ">
                            <div class="row noWhiteSpace"><p><strong>Industry: </strong>{{x.industry}}</p></div>
                            <div class="row noWhiteSpace"><p><strong>Functional Area: </strong>{{x.functionalArea}}</p></div>
                          </div>
-                       </div>&ndash;&gt;
+                       </div>
+                     </div>
+                   </div>
+                 &lt;!&ndash;<a class="row item " ng-repeat="x in mydata" href="#">
+                   <div class="row ">
+                     <div class="col-20 item item-avatar col-center">
+                       <img ng-src="{{ x.companyLogo}}">
+                     </div>
+                     <div class="col ">
+                       <div class="row ">
+                         &lt;!&ndash;<div class="col-66">{{ x.title }}</div>
+                         <div class="col-34"><strong>at {{ x.companyName }}</strong></div>&ndash;&gt;
+                         <p>{{x.title}} at <strong>{{x.companyName}}</strong></p>
+                         <div><p>{{x.location}}</p></div>
+                       </div>
+                       &lt;!&ndash; <div class="row ">
+                          <div class="col-33 "><p>{{x.location}}</p></div>
+                          <div class="col ">
+                            <div class="row noWhiteSpace"><p><strong>Industry: </strong>{{x.industry}}</p></div>
+                            <div class="row noWhiteSpace"><p><strong>Functional Area: </strong>{{x.functionalArea}}</p></div>
+                          </div>
+                        </div>&ndash;&gt;
 
-                    </div>
-                  </div>
+                     </div>
+                   </div>
 
-                </a>&ndash;&gt;
+                 </a>&ndash;&gt;
 
-              </ul>-->
+               </ul>&ndash;&gt;
 
-      <!--<ul ng-controller="numCtrl as numCtrl" class="list">
-        <li ng-repeat="x in numCtrl.num" class="item">
-          <a href="#" ng-click="">{{ x }}</a>
-        </li>
-      </ul>-->
+       &lt;!&ndash;<ul ng-controller="numCtrl as numCtrl" class="list">
+         <li ng-repeat="x in numCtrl.num" class="item">
+           <a href="#" ng-click="">{{ x }}</a>
+         </li>
+       </ul>&ndash;&gt;
 
-      <!--<ul class="list">
-        <li class="item">
-          <button ng-click="JobCtrl.next()">Next</button>
-          <button ng-click="JobCtrl.previous()">Previous</button>
-        </li>
-        &lt;!&ndash;<li>&ndash;&gt;
-          &lt;!&ndash;<button ng-repeat="x in JobCtrl.mydata">{{x}}</button>&ndash;&gt;
-        &lt;!&ndash;</li>&ndash;&gt;
-        <li class="item noWhiteSpace">
-          Current Page Number: <strong>{{ JobCtrl.pageNumber + 1 }}</strong>
-          Total Number of Pages: <strong>{{ JobCtrl.totalPages }}</strong>
-        </li>
-      </ul>
+       &lt;!&ndash;<ul class="list">
+         <li class="item">
+           <button ng-click="JobCtrl.next()">Next</button>
+           <button ng-click="JobCtrl.previous()">Previous</button>
+         </li>
+         &lt;!&ndash;<li>&ndash;&gt;
+           &lt;!&ndash;<button ng-repeat="x in JobCtrl.mydata">{{x}}</button>&ndash;&gt;
+         &lt;!&ndash;</li>&ndash;&gt;
+         <li class="item noWhiteSpace">
+           Current Page Number: <strong>{{ JobCtrl.pageNumber + 1 }}</strong>
+           Total Number of Pages: <strong>{{ JobCtrl.totalPages }}</strong>
+         </li>
+       </ul>
 
-      <ul class="list">
-        <li class="item" ng-repeat="x in JobCtrl.mydata" ng-click="onIndividual()">{{x.title}}</li>
-      </ul>-->
+       <ul class="list">
+         <li class="item" ng-repeat="x in JobCtrl.mydata" ng-click="onIndividual()">{{x.title}}</li>
+       </ul>&ndash;&gt;
 
-      <ion-nav-view></ion-nav-view>
-
-
-    </ion-tab>
-  </ion-tabs>
+       &lt;!&ndash;<ion-nav-view></ion-nav-view>&ndash;&gt;
 
 
+     </ion-tab>
+   </ion-tabs>-->
   <ion-content>
+    <a ui-sref="page1">goto page 1</a>
+    <a ui-sref="page2">goto page 2</a>
+
+    <h1>Index level</h1>
+    <ui-view></ui-view>
+
   </ion-content>
+
+  <!--<ion-nav-view></ion-nav-view>-->
 
 
 </ion-pane>

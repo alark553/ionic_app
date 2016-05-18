@@ -2,21 +2,23 @@
   <ion-content>
     <ul class="list">
       <li class="item">
-        <button ng-click="JobCtrl.next()">Next</button>
         <button ng-click="JobCtrl.previous()">Previous</button>
+        <button ng-click="JobCtrl.next()">Next</button>
       </li>
       <!--<li>-->
       <!--<button ng-repeat="x in JobCtrl.mydata">{{x}}</button>-->
       <!--</li>-->
       <li class="item noWhiteSpace">
-        Current Page Number: <strong>{{ JobCtrl.pageNumber + 1 }}</strong>
-        Total Number of Pages: <strong>{{ JobCtrl.totalPages }}</strong>
+        <p>Current Page Number: <strong>{{ JobCtrl.pageNumber + 1 }}</strong></p>
+        <p>Total Number of Pages: <strong>{{ JobCtrl.totalPages }}</strong></p>
       </li>
     </ul>
 
     <ul class="list">
       <li class="item" ng-repeat="x in JobCtrl.mydata">
-        <p ng-click="onIndividual()">{{x.title}}</p>
+        <p ng-click="JobCtrl.onIndividual()" ng-model="details">{{x.title}}
+          <ion-nav-view ng-show="show_var"></ion-nav-view>
+        </p>
         <!--<ion-nav-view></ion-nav-view>-->
       </li>
     </ul>

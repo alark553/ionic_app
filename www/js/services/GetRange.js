@@ -1,4 +1,3 @@
-
 //angular.module('service', [])
 ionicApp.factory('GetRange', ['$http', function ($http) {
     return {

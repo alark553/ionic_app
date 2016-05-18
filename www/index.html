@@ -156,7 +156,7 @@
         </ul>
 
         <ul class="list">
-          <li class="item" ng-repeat="x in JobCtrl.mydata">{{x.title}}</li>
+          <li class="item" ng-repeat="x in JobCtrl.mydata" ng-click="onIndividual()">{{x.title}}</li>
         </ul>
 
         <ul class="list">
@@ -179,6 +179,4 @@
 <script src="js/services/GetRange.js"></script>
 <script src="js/services/JobListing.js"></script>
 <script src="js/controllers/JobCtrl.js"></script>
-
-
 </html>

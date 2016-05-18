@@ -33,8 +33,15 @@ ionicApp.controller('JobCtrl', function ($scope, $http,JobListing,GetRange) {
       }
     };
 
+<<<<<<< HEAD
 
        self.num = GetRange.range(self.totalPages);
         console.log(self.num);
 
+=======
+    // self.num = GetRange.range(self.totalPages);
+    self.individual = function () {
+      
+    };
+>>>>>>> 0037abc39064a53414956a1bcc46ffbd04527616
   });

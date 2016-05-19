@@ -1,13 +1,13 @@
 //angular.module('controllers', [])
 
-ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, JobListing, GetRange) {
+ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $filter, JobListing, GetRange) {
 
   var self = this;
   self.num = [];
   self.mydata = [];
   self.pageNumber = 0;
   self.pageSize = 10;
-
+  self.individualData = [];
   self.jobFunction = function () {
     JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
 
@@ -35,6 +35,18 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, JobListing
 
   self.num = GetRange.range(self.totalPages);
   // console.log(self.num);
-  
+
+  self.individualDataShow = function (jobId) {
+    // jobId= $stateParams.jobId;
+    // $rootScope.jobId= jobId;
+    self.individualData = $filter('filter')(self.mydata, {jobId: jobId})[0];
+
+    console.log(self.individualData);
+    /*JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
+     self.individualData = response.data.result.jobDetails;
+
+     });*/
+  };
+
 
 });

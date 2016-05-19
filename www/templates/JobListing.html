@@ -20,7 +20,7 @@
     </ul>
 
     <ul class="list">
-      <li class="item" ng-repeat="x in JobCtrl.mydata" ng-click="JobCtrl.individualDataShow({{x.jobId}})">{{x.title}}
+      <li class="item" ng-repeat="x in JobCtrl.mydata" ui-sref="" ng-click="JobCtrl.individualDataShow({{x.jobId}})">{{x.title}}
         <!--<ion-nav-view></ion-nav-view>-->
       </li>
     </ul>

@@ -8,6 +8,7 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   self.pageNumber = 0;
   self.pageSize = 10;
   self.individualData = [];
+  
   self.jobFunction = function () {
     JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
 
@@ -41,11 +42,11 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     // $rootScope.jobId= jobId;
     self.individualData = $filter('filter')(self.mydata, {jobId: jobId})[0];
     console.log(self.individualData);
-    $ionicPopup.show({
+    /*$ionicPopup.show({
       templateUrl: 'templates/IndividualJobs.html',
       buttons: [{text: 'Back'}]
-    });
+    });*/
   };
-  
+
 
 });

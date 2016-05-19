@@ -45,9 +45,21 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     $ionicPopup.show({
       templateUrl: 'templates/IndividualJobs.html',
       scope: $scope,
-      buttons: [{text: 'Back'}]
+      buttons: [{text: 'Back'},
+        {text:'Delete'}]
     });
   };
 
+  self.leftSwipe = function (jobId, index) {
+    console.log('Left Swipe Detected');
+    console.log(jobId);
+    console.log(index);
+    self.mydata.splice(index,1);
+  };
 
+  self.rightSwipe = function (jobId, index) {
+    console.log('right Swipe Detected');
+    console.log(jobId);
+    console.log(index);
+  };
 });

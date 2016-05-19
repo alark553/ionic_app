@@ -1,6 +1,6 @@
 //angular.module('controllers', [])
 
-ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $filter, JobListing, GetRange) {
+ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopup, $filter, JobListing, GetRange) {
 
   var self = this;
   self.num = [];
@@ -40,13 +40,12 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $filter, J
     // jobId= $stateParams.jobId;
     // $rootScope.jobId= jobId;
     self.individualData = $filter('filter')(self.mydata, {jobId: jobId})[0];
-
     console.log(self.individualData);
-    /*JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
-     self.individualData = response.data.result.jobDetails;
-
-     });*/
+    $ionicPopup.show({
+      templateUrl: 'templates/IndividualJobs.html',
+      buttons: [{text: 'Back'}]
+    });
   };
-
+  
 
 });

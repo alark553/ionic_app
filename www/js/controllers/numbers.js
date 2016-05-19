@@ -1,3 +1,4 @@
+/*
 angular.module('numbers',[])
 
 .controller('numCtrl', function ($scope) {
@@ -10,3 +11,4 @@ angular.module('numbers',[])
   };
   self.range();
 });
+*/

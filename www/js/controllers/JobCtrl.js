@@ -8,6 +8,7 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   self.pageNumber = 0;
   self.pageSize = 10;
   self.width = 0;
+  self.to_be_true = 1;
 
   self.jobFunction = function () {
     JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
@@ -19,11 +20,21 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   };
 
   self.jobFunction();
+
   self.next = function () {
     if (self.pageNumber < self.totalPages - 1) {
       self.pageNumber++;
       self.jobFunction();
     }
+  };
+
+  self.concating = function () {
+    self.pageNumber++;
+    // console.log(self.mydata);
+    JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
+      self.mydata = self.mydata.concat(response.data.result.jobDetails);
+    });
+    // console.log(self.mydata);
   };
 
   self.previous = function () {
@@ -48,11 +59,11 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
       templateUrl: 'templates/IndividualJobs.html',
       scope: $scope,
       buttons: [{text: 'Back'},
-        {text:'Delete'}]
+        {text: 'Delete'}]
     });
   };
 
-  /*self.leftSwipe = function (jobId, index) {
+  self.leftSwipe = function (jobId, index) {
     console.log('Left Swipe Detected');
     console.log(jobId);
     console.log(index);
@@ -67,5 +78,29 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     self.width -= 25;
     console.log(index);
     console.log(self.width);
+  };
+
+  /*self.ifScroll = function (pageNum) {
+    if (pageNum > self.totalPages){
+      return false;
+    }
+    else true;
   };*/
+
+  self.loadMore = function () {
+    self.pageNumber++;
+    JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
+      self.mydata = self.mydata.concat(response.data.result.jobDetails);
+    });
+    // self.to_be_true = self.ifScroll(self.pageNumber);
+    if (self.pageNumber > self.totalPages){
+      self.to_be_true = 0;
+    }
+    // console.log( self.ifScroll(self.pageNumber));
+    console.log(self.to_be_true);
+    $scope.$broadcast('scroll.infiniteScrollComplete');
+
+  };
+
+
 });

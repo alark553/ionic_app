@@ -9,6 +9,7 @@
       <li class="item">
         <button ng-click="JobCtrl.previous()">Previous</button>
         <button ng-click="JobCtrl.next()">Next</button>
+        <button ng-click="JobCtrl.concating()">Concat</button>
       </li>
       <!--<li>-->
       <!--<button ng-repeat="x in JobCtrl.mydata">{{x}}</button>-->
@@ -20,14 +21,21 @@
     </ul>
 
     <ul class="list">
-      <li class="item card" ng-repeat="x in JobCtrl.mydata" ng-click="JobCtrl.individualDataShow({{x.jobId}})" on-swipe-left="JobCtrl.leftSwipe({{x.jobId}}, $index)" on-swipe-right="JobCtrl.rightSwipe({{x.jobId}}, $index)">{{x.jobId}}
+      <li class="item card" ng-repeat="x in JobCtrl.mydata track by $index" ng-click="JobCtrl.individualDataShow({{x.jobId}})" on-swipe-left="JobCtrl.leftSwipe({{x.jobId}}, $index)"
+          on-swipe-right="JobCtrl.rightSwipe({{x.jobId}}, $index)">{{x.jobId}}
         <!--<ion-nav-view></ion-nav-view>-->
       </li>
     </ul>
 
-    <div class="w3-progress-container">
+    <ion-infinite-scroll
+      ng-if= "JobCtrl.to_be_true"
+      on-infinite="JobCtrl.loadMore()"
+      distance="1%">
+    </ion-infinite-scroll>
+
+    <!--<div class="w3-progress-container">
       <div class="w3-progressbar w3-green" style="width: {{JobCtrl.width}}px"></div>
-    </div>
+    </div>-->
     <!--<p style="font-size:{{JobCtrl.font}}">Style</p>-->
     <!--<ul class="list">
       <button class="item" ng-repeat="x in JobCtrl.num">{{x}}</button>

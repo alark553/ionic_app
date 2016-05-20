@@ -8,6 +8,7 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   self.pageNumber = 0;
   self.pageSize = 10;
   self.individualData = [];
+  self.width = 0;
 
   self.jobFunction = function () {
     JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
@@ -54,12 +55,16 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     console.log('Left Swipe Detected');
     console.log(jobId);
     console.log(index);
-    self.mydata.splice(index,1);
+    self.width += 25;
+    //self.mydata.splice(index,1);
+    console.log(self.width);
   };
 
   self.rightSwipe = function (jobId, index) {
     console.log('right Swipe Detected');
     console.log(jobId);
+    self.width -= 25;
     console.log(index);
+    console.log(self.width);
   };
 });

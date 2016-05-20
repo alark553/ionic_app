@@ -20,7 +20,7 @@
     </ul>
 
     <ul class="list">
-      <li class="item card" ng-repeat="x in JobCtrl.mydata track by $index" ng-click="JobCtrl.individualDataShow({{x.jobId}})" on-swipe-left="JobCtrl.leftSwipe({{x.jobId}}, $index)" on-swipe-right="JobCtrl.rightSwipe({{x.jobId}}, $index)">{{x.title}}
+      <li class="item card" ng-repeat="x in JobCtrl.mydata" ng-click="JobCtrl.individualDataShow({{x.jobId}})" on-swipe-left="JobCtrl.leftSwipe({{x.jobId}}, $index)" on-swipe-right="JobCtrl.rightSwipe({{x.jobId}}, $index)">{{x.jobId}}
         <!--<ion-nav-view></ion-nav-view>-->
       </li>
     </ul>

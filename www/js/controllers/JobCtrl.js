@@ -52,7 +52,7 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     });
   };
 
-  self.leftSwipe = function (jobId, index) {
+  /*self.leftSwipe = function (jobId, index) {
     console.log('Left Swipe Detected');
     console.log(jobId);
     console.log(index);
@@ -67,5 +67,5 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     self.width -= 25;
     console.log(index);
     console.log(self.width);
-  };
+  };*/
 });

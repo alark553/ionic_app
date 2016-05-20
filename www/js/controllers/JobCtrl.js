@@ -8,7 +8,7 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   self.pageNumber = 0;
   self.pageSize = 10;
   self.width = 0;
-  self.to_be_true = 1;
+  self.toBeTrue = 1;
 
   self.jobFunction = function () {
     JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
@@ -80,13 +80,6 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     console.log(self.width);
   };
 
-  /*self.ifScroll = function (pageNum) {
-    if (pageNum > self.totalPages){
-      return false;
-    }
-    else true;
-  };*/
-
   self.loadMore = function () {
     self.pageNumber++;
     JobListing.fetchJobs(self.pageNumber, self.pageSize).then(function (response) {
@@ -94,10 +87,11 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
     });
     // self.to_be_true = self.ifScroll(self.pageNumber);
     if (self.pageNumber > self.totalPages){
-      self.to_be_true = 0;
+      self.toBeTrue = 0;
+      return;
     }
     // console.log( self.ifScroll(self.pageNumber));
-    console.log(self.to_be_true);
+    console.log(self.toBeTrue);
     $scope.$broadcast('scroll.infiniteScrollComplete');
 
   };

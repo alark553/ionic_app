@@ -1,4 +1,5 @@
 ionicApp.config(function ($stateProvider, $urlRouterProvider) {
+
   $stateProvider
     .state('Jobs', {
       url: '/jobs',
@@ -13,3 +14,10 @@ ionicApp.config(function ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/jobs');
 });
+
+/*
+MyApp.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+  $ionicConfigProvider.tabs.position('bottom'); // other values: top
+
+}]);*/

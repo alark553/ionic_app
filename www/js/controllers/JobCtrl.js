@@ -7,7 +7,6 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   self.mydata = [];
   self.pageNumber = 0;
   self.pageSize = 10;
-  self.individualData = [];
   self.width = 0;
 
   self.jobFunction = function () {
@@ -16,7 +15,6 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
       self.mydata = response.data.result.jobDetails;
       self.totalCount = response.data.totalRecordCount;
       self.totalPages = Math.ceil(self.totalCount / self.pageSize);
-
     });
   };
 
@@ -41,8 +39,11 @@ ionicApp.controller('JobCtrl', function ($scope, $http, $stateParams, $ionicPopu
   self.individualDataShow = function (jobId) {
     // jobId= $stateParams.jobId;
     // $rootScope.jobId= jobId;
+    self.individualData = [];
+    console.log(self.mydata);
     self.individualData = $filter('filter')(self.mydata, {jobId: jobId})[0];
-
+    console.log(self.individualData);
+    console.log(jobId);
     $ionicPopup.show({
       templateUrl: 'templates/IndividualJobs.html',
       scope: $scope,

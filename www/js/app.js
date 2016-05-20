@@ -24,3 +24,6 @@ ionicApp.run(function ($ionicPlatform) {
   });
 });
 
+ionicApp.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
+});
